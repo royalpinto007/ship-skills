@@ -1,5 +1,8 @@
 # Ship Skills
 
+[![ci](https://github.com/royalpinto007/ship-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/royalpinto007/ship-skills/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Agent Skills that make a repo shippable**, from "works on my machine" to something a stranger can trust, run, and that you can release. The build-side counterpart to [distro-skills](https://github.com/royalpinto007/distro-skills): ship it well, then distribute it.
 
 Works with [Claude Code](https://claude.com/claude-code), OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
