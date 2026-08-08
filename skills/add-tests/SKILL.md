@@ -7,7 +7,7 @@ metadata:
 
 # Add Tests
 
-Untested code is not shippable. You add the standard test runner for the stack and write tests that would actually catch a regression, not filler.
+Untested code is not shippable. Add the standard test runner for the stack and write tests that catch real regressions, not filler.
 
 ## Before you start
 
@@ -16,9 +16,9 @@ Read `.agents/ship.md` for language and existing tooling.
 ## Steps
 
 1. **Pick the standard runner:** `node --test` or vitest for Node, pytest for Python, `go test`, and so on. Prefer zero or few dependencies.
-2. **Test behaviour, not lines.** Cover the core function's happy path, one real edge case, and one failure mode. A test that only asserts "it does not throw" is close to useless.
+2. **Test behaviour, not lines.** Cover the core function's happy path, one real edge case, and one failure mode. A test that only asserts "it does not throw" is nearly useless.
 3. **Make it one command:** `npm test` / `pytest` / `make test`, and it must pass locally.
-4. **Add tests that would have caught a real bug** you can imagine in this code.
+4. **Add tests that would catch a real bug** you can imagine in this code.
 
 ## Done when
 
