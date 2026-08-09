@@ -11,6 +11,35 @@ Works with [Claude Code](https://claude.com/claude-code), OpenAI Codex, Cursor, 
 
 `ship-context` runs first and writes `.agents/ship.md` (stack, package manager, test tooling, publish target) that every other skill reads. `ship-checklist` audits the repo against a shippable bar and sequences the rest.
 
+## Worked example
+
+Here's what happens when you point an agent at a bare Python repo with just a `main.py`:
+
+**Before** — a script that works locally:
+```python
+# main.py
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("World")
+```
+
+**After running ship-skills** — a shippable package:
+
+```
+$ ls
+main.py          # unchanged
+pyproject.toml   # added by package-for-pypi
+tests/           # added by add-tests
+  test_main.py
+.github/         # added by set-up-ci
+  workflows/ci.yml
+CHANGELOG.md     # added by write-a-changelog
+CONTRIBUTING.md  # added by repo-hygiene-pass
+```
+
+The agent detects Python + pip, scaffolds pytest, adds a CI workflow with a green badge, and packages it for PyPI — all from the same `main.py`.
+
 ## The skills
 
 **Foundation**
